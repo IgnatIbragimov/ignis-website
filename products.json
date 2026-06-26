@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "id": "shirt-001",
+      "name": "MAN CROP RUBASHKA",
+      "price": 6000,
+      "currency": "RUB",
+      "status": "available",
+      "drop_eta": "2 недели",
+      "description": "Архитектурная рубашка с укороченной длиной и объёмным рукавом. Создана для собранного силуэта через пропорции.",
+      "fit_note": "Укороченная посадка с объёмом в рукаве. Подходит для прямого и широкого силуэта — собирает образ, когда носится с брюками с высокой посадкой.",
+      "measurements": [
+        { "label": "Длина по спинке", "value": "59 см" },
+        { "label": "Ширина", "value": "51 см" },
+        { "label": "Длина рукава", "value": "65 см" }
+      ],
+      "sizes": ["One size"],
+      "composition": "95% хлопок, 5% эластан",
+      "images": [
+        { "src": "assets/images/shirt-1.jpg", "alt": "MAN CROP RUBASHKA — вид спереди" },
+        { "src": "assets/images/shirt-2.jpg", "alt": "MAN CROP RUBASHKA — вид со спины" },
+        { "src": "assets/images/shirt-3.jpg", "alt": "MAN CROP RUBASHKA — образ сидя" },
+        { "src": "assets/images/shirt-4.jpg", "alt": "MAN CROP RUBASHKA — вид со спины в студии" }
+      ]
+    },
+    {
+      "id": "trousers-001",
+      "name": "MAN WIDE BRUKI",
+      "price": 8000,
+      "currency": "RUB",
+      "status": "available",
+      "drop_eta": "2 недели",
+      "color": "Графитовый серый",
+      "description": "Архитектурные широкие брюки в полоску. Двойные защипы создают текстурность и геометрию материала, выстраивая пропорциональный силуэт.",
+      "fit_note": "Средняя посадка обеспечивает гармоничный вид и комфорт при носке. Идеальное сочетание с укороченным верхом для завершения композиции.",
+      "measurements": [
+        { "label": "Талия", "value": "78 см" },
+        { "label": "Бёдра", "value": "112 см" },
+        { "label": "Длина по внутр. шву", "value": "74 см" },
+        { "label": "Ширина штанины", "value": "32 см" }
+      ],
+      "sizes": ["One size"],
+      "composition": "70% шерсть, 28% полиэстер, 2% эластан",
+      "images": [
+        { "src": "assets/images/trousers-2.jpg", "alt": "MAN WIDE BRUKI — образ на улице" },
+        { "src": "assets/images/trousers-1.jpg", "alt": "MAN WIDE BRUKI — вид спереди" }
+      ]
+    }
+  ]
+}

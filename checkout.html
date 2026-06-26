@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Оформление — IGNIS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav nav--solid" role="banner">
+    <a href="index.html" class="nav__logo" aria-label="IGNIS — на главную">
+      <img src="assets/logo-cropped.png" alt="IGNIS" />
+    </a>
+    <nav class="nav__links" aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">О бренде</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <button class="nav__cart" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="nav__cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="nav__burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="menu-overlay" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+    <button class="menu-overlay__close" aria-label="Закрыть меню">&times;</button>
+    <nav class="menu-overlay__links" aria-label="Мобильное меню">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">О бренде</a>
+      <a href="cart.html">Корзина</a>
+    </nav>
+  </div>
+
+  <main class="page">
+
+    <!-- ===== Форма оформления ===== -->
+    <div id="checkout-view">
+      <div class="page-head">
+        <p class="page-head__label">Шаг оформления</p>
+        <h1 class="page-head__title">Оформление предзаказа</h1>
+      </div>
+
+      <div class="checkout">
+        <!-- Левая колонка: форма -->
+        <form class="checkout__form" id="checkout-form" novalidate>
+          <div class="form-field">
+            <label for="name">Имя и фамилия</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="address">Адрес доставки</label>
+            <input type="text" id="address" name="address" placeholder="Улица, дом, квартира" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="city">Город</label>
+              <input type="text" id="city" name="city" required />
+            </div>
+            <div class="form-field">
+              <label for="delivery">Способ доставки</label>
+              <select id="delivery" name="delivery">
+                <option value="cdek">СДЭК — стоимость и сроки уточняются после оформления</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="comment">Комментарий к заказу</label>
+            <textarea id="comment" name="comment" placeholder="Необязательно"></textarea>
+          </div>
+
+          <button type="submit" class="btn" id="submit-order">Оформить предзаказ</button>
+          <p class="checkout__delivery-note">
+            Оплата на этом этапе не подключена — после оформления мы свяжемся с вами для подтверждения и оплаты.
+          </p>
+        </form>
+
+        <!-- Правая колонка: сводка заказа -->
+        <aside class="checkout__aside">
+          <h3>Ваш заказ</h3>
+          <div id="checkout-summary">
+            <p style="color:var(--color-warm-gray);font-size:13px;">Загрузка…</p>
+          </div>
+          <p class="checkout__delivery-note">
+            Доставка: СДЭК. Стоимость и сроки уточняются менеджером после оформления.
+          </p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ===== Экран подтверждения (скрыт по умолчанию) ===== -->
+    <div id="confirm-view" class="confirm hidden">
+      <h1 class="confirm__title">Спасибо, заказ принят</h1>
+      <p class="confirm__text">
+        Мы свяжемся с вами для подтверждения и оплаты.<br>
+        Оплата пока не подключена — это отдельный этап.
+      </p>
+      <a href="catalog.html" class="btn">Вернуться в каталог</a>
+    </div>
+
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

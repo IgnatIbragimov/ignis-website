@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Корзина — IGNIS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav nav--solid" role="banner">
+    <a href="index.html" class="nav__logo" aria-label="IGNIS — на главную">
+      <img src="assets/logo-cropped.png" alt="IGNIS" />
+    </a>
+    <nav class="nav__links" aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">О бренде</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <button class="nav__cart" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="nav__cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="nav__burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="menu-overlay" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+    <button class="menu-overlay__close" aria-label="Закрыть меню">&times;</button>
+    <nav class="menu-overlay__links" aria-label="Мобильное меню">
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">О бренде</a>
+      <a href="cart.html">Корзина</a>
+    </nav>
+  </div>
+
+  <main class="page">
+    <div class="page-head">
+      <p class="page-head__label">Предзаказ</p>
+      <h1 class="page-head__title">Корзина</h1>
+    </div>
+
+    <section class="cart" id="cart-root">
+      <p style="color:var(--color-warm-gray)">Загрузка…</p>
+    </section>
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

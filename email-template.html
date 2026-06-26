@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  IGNIS — шаблон письма «Заказ принят».
+  Inline-стили: почтовые клиенты не поддерживают внешние CSS.
+  Плейсхолдеры подставляются серверной функцией (api/send-order.js):
+    {{customer_name}} {{product_name}} {{size}} {{price}} {{total}} {{product_image}}
+  {{order_rows}} — готовый HTML строк заказа (несколько товаров).
+-->
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заказ принят — IGNIS</title>
+</head>
+<body style="margin:0; padding:0; background-color:#F5F4F0;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F5F4F0; padding:32px 16px;">
+    <tr>
+      <td align="center">
+
+        <!-- Контейнер -->
+        <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="max-width:480px; width:100%; background-color:#F5F4F0;">
+
+          <!-- Шапка с логотипом -->
+          <tr>
+            <td align="center" style="padding:8px 0 24px 0; border-bottom:1px solid #C8C4BC;">
+              <div style="font-family:Georgia,'Times New Roman',serif; font-size:30px; letter-spacing:10px; color:#1A1A18; padding-left:10px;">IGNIS</div>
+              <div style="font-family:Georgia,'Times New Roman',serif; font-size:10px; letter-spacing:4px; color:#6B5B4E; margin-top:4px;">CLOTHING</div>
+            </td>
+          </tr>
+
+          <!-- Обращение -->
+          <tr>
+            <td style="padding:32px 8px 8px 8px; font-family:Georgia,'Times New Roman',serif; font-size:20px; color:#1A1A18;">
+              {{customer_name}}, спасибо за предзаказ!
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 8px 24px 8px; font-family:Georgia,'Times New Roman',serif; font-size:15px; line-height:1.6; color:#6B5B4E;">
+              Мы получили ваш заказ и уже передаём его в работу.
+            </td>
+          </tr>
+
+          <!-- Карточка заказа -->
+          <tr>
+            <td style="padding:0 8px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF; border:1px solid #E8E4DC;">
+                <tr>
+                  <td style="padding:20px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <!-- Фото товара -->
+                        <td width="84" valign="top" style="padding-right:16px;">
+                          <img src="{{product_image}}" alt="{{product_name}}" width="84" style="display:block; width:84px; height:112px; object-fit:cover; background-color:#E8E4DC; border:0;" />
+                        </td>
+                        <!-- Детали -->
+                        <td valign="top" style="font-family:Georgia,'Times New Roman',serif;">
+                          <div style="font-size:15px; color:#1A1A18; letter-spacing:1px;">{{product_name}}</div>
+                          <div style="font-size:13px; color:#6B5B4E; padding-top:6px;">Размер: {{size}}</div>
+                          <div style="font-size:13px; color:#6B5B4E; padding-top:4px;">{{price}}</div>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Итог -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #E8E4DC; margin-top:18px;">
+                      <tr>
+                        <td style="padding-top:16px; font-family:Georgia,'Times New Roman',serif; font-size:14px; color:#6B5B4E;">Итого</td>
+                        <td align="right" style="padding-top:16px; font-family:Georgia,'Times New Roman',serif; font-size:16px; color:#1A1A18;">{{total}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Что дальше -->
+          <tr>
+            <td style="padding:32px 8px 8px 8px; font-family:Georgia,'Times New Roman',serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#6B5B4E;">
+              Что дальше
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 8px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-family:Georgia,'Times New Roman',serif; font-size:14px; line-height:1.6; color:#1A1A18;">
+                <tr><td style="padding:8px 0; border-bottom:1px solid #E8E4DC;">Мы свяжемся с вами для подтверждения оплаты и адреса доставки.</td></tr>
+                <tr><td style="padding:8px 0; border-bottom:1px solid #E8E4DC;">Изделие шьётся под текущий дроп. Срок отправки — 2 недели с момента подтверждения.</td></tr>
+                <tr><td style="padding:8px 0;">Трек-номер пришлём отдельным письмом.</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Контакт -->
+          <tr>
+            <td style="padding:28px 8px; font-family:Georgia,'Times New Roman',serif; font-size:14px; line-height:1.6; color:#6B5B4E;">
+              Вопросы — пишите в ответ на это письмо или в Telegram (@stafflud).
+            </td>
+          </tr>
+
+          <!-- Подпись -->
+          <tr>
+            <td align="center" style="padding:28px 8px 8px 8px; border-top:1px solid #C8C4BC;">
+              <div style="font-family:Georgia,'Times New Roman',serif; font-size:18px; letter-spacing:6px; color:#1A1A18; padding-left:6px;">IGNIS</div>
+              <div style="font-family:Georgia,'Times New Roman',serif; font-size:13px; color:#C8C4BC; margin-top:8px;">Форма, которая говорит за вас.</div>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

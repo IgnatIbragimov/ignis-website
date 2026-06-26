@@ -1,0 +1,12 @@
+# Vercel
+.vercel
+.env*.local
+
+# Node
+node_modules
+
+# macOS
+.DS_Store
+
+# Локальный конфиг превью (не нужен в репозитории)
+.claude
